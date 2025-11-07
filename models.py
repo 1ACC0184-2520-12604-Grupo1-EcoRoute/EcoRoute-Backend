@@ -1,38 +1,33 @@
 # models.py
-from sqlalchemy import Column, Integer, String, DateTime, Float, Text
-from sqlalchemy.orm import declarative_base
+from sqlalchemy import Column, Integer, String, DateTime, Float, ForeignKey, Text
+from sqlalchemy.orm import relationship
 from datetime import datetime
+from database import Base
 
-Base = declarative_base()
-
-# ==== Usuario (igual a lo que ya tenías) ====
 class User(Base):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
-    username = Column(String(100), unique=True, nullable=False, index=True)
-    email = Column(String(200), unique=True, nullable=False, index=True)
+    username = Column(String(80), unique=True, index=True, nullable=False)
+    email = Column(String(120), unique=True, index=True, nullable=False)
     hashed_password = Column(String(255), nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow)
 
-# ==== Reporte de rutas calculadas ====
+    reports = relationship("Report", back_populates="user", cascade="all, delete-orphan")
+
 class Report(Base):
     __tablename__ = "reports"
 
     id = Column(Integer, primary_key=True, index=True)
-    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+    created_at = Column(DateTime, default=datetime.utcnow, index=True)
 
-    origin = Column(String(150), nullable=False)
-    destination = Column(String(150), nullable=False)
-    product = Column(String(150), nullable=True)
+    user_id = Column(Integer, ForeignKey("users.id"), index=True, nullable=False)
+    origin = Column(String(120), nullable=False)
+    destination = Column(String(120), nullable=False)
+    product = Column(String(120), nullable=False)
 
-    # costo total acumulado de la ruta
-    cost = Column(Float, nullable=False, default=0.0)
+    cost = Column(Float, nullable=False)
+    path = Column(Text, nullable=False)          # JSON string con la ruta
+    algorithm = Column(String(50), default="dijkstra")
 
-    # camino serializado (JSON como string)
-    path = Column(Text, nullable=False, default="[]")
-
-    # algoritmo usado: 'dijkstra' | 'floyd' | 'auto'
-    algorithm = Column(String(30), nullable=True)
-
-    def __repr__(self) -> str:
-        return f"<Report id={self.id} {self.origin}->{self.destination} {self.product} cost={self.cost}>"
+    user = relationship("User", back_populates="reports")

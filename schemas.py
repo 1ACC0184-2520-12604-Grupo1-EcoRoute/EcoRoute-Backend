@@ -1,31 +1,56 @@
-from typing import List
-from pydantic import BaseModel
+# schemas.py
+from pydantic import BaseModel, EmailStr, ConfigDict
+from datetime import datetime
+from typing import Dict, Tuple, List
 
+# ========= Usuarios =========
 class UserCreate(BaseModel):
     username: str
-    email: str
+    email: EmailStr
     password: str
 
-class UserLogin(BaseModel):
-    username: str
-    password: str
-
-class UserResponse(BaseModel):
+class UserOut(BaseModel):
     id: int
     username: str
-    email: str
+    email: EmailStr
+    created_at: datetime
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
 
+class Token(BaseModel):
+    access_token: str
+    token_type: str
 
+# ========= Nodos / Rutas =========
+class NodesResponse(BaseModel):
+    nodes: List[str]
+    geo: Dict[str, Tuple[float, float]]
 
-class RouteRequest(BaseModel):
+class RouteComputeRequest(BaseModel):
     origin: str
     destination: str
-    product: str = "Paneles solares"
+    product: str
 
-class RouteResponse(BaseModel):
+class RouteGeoPoint(BaseModel):
+    name: str
+    lat: float
+    lng: float
+
+class RouteGeoResponse(BaseModel):
     path: List[str]
-    total_cost: float
-    details: List[dict]  # list of edge details (origin,dest,weight,tariff,shipping,product)
+    cost: float
+    geoPath: List[RouteGeoPoint]
+
+# ========= Reportes =========
+class ReportOut(BaseModel):
+    id: int
+    created_at: datetime
+    user_id: int
+    origin: str
+    destination: str
+    product: str
+    cost: float
+    path: str           # almacenado como JSON string en BD
+    algorithm: str
+
+    model_config = ConfigDict(from_attributes=True)
