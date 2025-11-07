@@ -1,0 +1,252 @@
+[
+  {
+    "id": 1,
+    "user": "renzo21",
+    "title": "Red mínima Baterías",
+    "algorithm": "kruskal",
+    "description": "Red mínima generada con Kruskal sobre las rutas disponibles del producto \"Baterías\".",
+    "result_summary": "Costo total: 890,728.65",
+    "created_at": "2025-11-07T09:02:16.748274",
+    "hidden": true
+  },
+  {
+    "id": 2,
+    "user": "renzo21",
+    "title": "Ruta óptima TSP Baterías",
+    "algorithm": "tsp",
+    "description": "Ruta aproximada calculada con heurística TSP visitando múltiples países para \"Baterías\".",
+    "result_summary": "Distancia relativa total: 692.95",
+    "created_at": "2025-11-07T09:02:17.437317",
+    "hidden": true
+  },
+  {
+    "id": 3,
+    "user": "renzo21",
+    "title": "Red mínima Baterías",
+    "algorithm": "kruskal",
+    "description": "Red mínima generada con Kruskal sobre las rutas disponibles del producto \"Baterías\".",
+    "result_summary": "Costo total: 890,728.65",
+    "created_at": "2025-11-07T09:02:21.416126",
+    "hidden": true
+  },
+  {
+    "id": 4,
+    "user": "renzo21",
+    "title": "Ruta óptima TSP Baterías",
+    "algorithm": "tsp",
+    "description": "Ruta aproximada calculada con heurística TSP visitando múltiples países para \"Baterías\".",
+    "result_summary": "Distancia relativa total: 692.95",
+    "created_at": "2025-11-07T09:09:50.180103",
+    "hidden": true
+  },
+  {
+    "id": 5,
+    "user": "renzo21",
+    "title": "Red mínima Baterías",
+    "algorithm": "kruskal",
+    "description": "Red mínima generada con Kruskal sobre las rutas disponibles del producto \"Baterías\".",
+    "result_summary": "Costo total: 890,728.65",
+    "created_at": "2025-11-07T09:09:54.605866",
+    "hidden": true
+  },
+  {
+    "id": 6,
+    "user": "renzo21",
+    "title": "Red mínima general",
+    "algorithm": "kruskal",
+    "description": "Red mínima generada con Kruskal sobre las rutas disponibles.",
+    "result_summary": "Costo total: 693,930.55",
+    "created_at": "2025-11-07T09:32:57.474983",
+    "hidden": true
+  },
+  {
+    "id": 7,
+    "user": "renzo21",
+    "title": "Flujo puntual Baterías",
+    "algorithm": "puntual",
+    "description": "Flujo puntual desde Alemania hacia Argentina para el producto \"Baterías\". Total: 197,440,000. Arancel aplicado: 5%. Total + arancel: 207,312,000.",
+    "result_summary": "Origen: Alemania · Destino: Argentina · Producto: Baterías · Total: 197,440,000 · Total + arancel: 207,312,000",
+    "created_at": "2025-11-07T09:40:14.968309",
+    "hidden": true
+  },
+  {
+    "id": 8,
+    "user": "renzo21",
+    "title": "Flujo puntual Alemania → Perú",
+    "algorithm": "flow",
+    "description": "Flujo puntual desde Alemania hacia Perú para el producto \"Baterías\".",
+    "result_summary": "Origen: Alemania | Destino: Perú | Producto: Baterías | Total: 1,795,400 | Total+Arancel(25%): 2,244,250",
+    "created_at": "2025-11-07T10:07:18.280070",
+    "hidden": false
+  },
+  {
+    "id": 9,
+    "user": "renzo21",
+    "title": "Flujo puntual España → Brasil",
+    "algorithm": "flow",
+    "description": "Flujo puntual desde España hacia Brasil para el producto \"Paneles solares\".",
+    "result_summary": "Origen: España | Destino: Brasil | Producto: Paneles solares | Total: 1,494,240 | Total+Arancel(20%): 1,793,088",
+    "created_at": "2025-11-07T10:07:30.229493",
+    "hidden": false
+  },
+  {
+    "id": 10,
+    "user": "renzo21",
+    "title": "Flujo puntual Alemania → Brasil",
+    "algorithm": "flow",
+    "description": "Flujo puntual desde Alemania hacia Brasil para el producto \"Paneles solares\".",
+    "result_summary": "Origen: Alemania | Destino: Brasil | Producto: Paneles solares | Total: 967,600 | Total+Arancel(19%): 1,151,444",
+    "created_at": "2025-11-07T10:07:58.905115",
+    "hidden": false
+  },
+  {
+    "id": 11,
+    "user": "renzo21",
+    "title": "Flujo puntual Alemania → Argentina",
+    "algorithm": "flow",
+    "description": "Flujo puntual desde Alemania hacia Argentina para el producto \"Baterías\".",
+    "result_summary": "Origen: Alemania | Destino: Argentina | Producto: Baterías | Total: 197,440,000 | Total+Arancel(5%): 207,312,000",
+    "created_at": "2025-11-07T10:14:28.537756",
+    "hidden": false
+  },
+  {
+    "id": 12,
+    "user": "renzo21",
+    "title": "Ruta mínima Alemania → Argentina (Baterías)",
+    "algorithm": "dijkstra",
+    "description": "Ruta mínima calculada con Dijkstra para el producto \"Baterías\".",
+    "result_summary": "Origen: Alemania | Destino: Argentina | Producto: Baterías | Peso total: 89,840",
+    "created_at": "2025-11-07T10:14:29.377486",
+    "hidden": false
+  },
+  {
+    "id": 13,
+    "user": "renzo21",
+    "title": "Red mínima Baterías",
+    "algorithm": "kruskal",
+    "description": "Red mínima generada con Kruskal sobre las rutas del producto \"Baterías\".",
+    "result_summary": "Producto: Baterías | Costo total: 784,575",
+    "created_at": "2025-11-07T10:14:30.233922",
+    "hidden": false
+  },
+  {
+    "id": 14,
+    "user": "renzo21",
+    "title": "Ruta óptima TSP Baterías",
+    "algorithm": "tsp",
+    "description": "Ruta aproximada calculada con heurística TSP visitando múltiples países para \"Baterías\".",
+    "result_summary": "Producto: Baterías | Distancia relativa total: 576.72",
+    "created_at": "2025-11-07T10:14:30.732852",
+    "hidden": false
+  },
+  {
+    "id": 15,
+    "user": "renzo21",
+    "title": "Ruta óptima Floyd-Warshall PER → CHL",
+    "algorithm": "floyd-warshall",
+    "description": "Ruta óptima calculada con Floyd-Warshall (rapidez) para el producto \"TEXTIL_PREMIUM\".",
+    "result_summary": "Ruta: PER → CHL | Tipo: aerea | Distancia: 17,000 km | Tiempo: 22 h | Costo: 1,500 USD",
+    "created_at": "2025-11-07T10:54:12.028233",
+    "hidden": false
+  },
+  {
+    "id": 16,
+    "user": "renzo21",
+    "title": "Ruta óptima Floyd-Warshall PER → CHL",
+    "algorithm": "floyd-warshall",
+    "description": "Ruta óptima calculada con Floyd-Warshall (rapidez) para el producto \"TEXTIL_PREMIUM\".",
+    "result_summary": "Ruta: PER → CHL | Tipo: aerea | Distancia: 17,000 km | Tiempo: 22 h | Costo: 1,500 USD",
+    "created_at": "2025-11-07T10:55:51.787734",
+    "hidden": false
+  },
+  {
+    "id": 17,
+    "user": "renzo21",
+    "title": "Ruta óptima Dijkstra PER → CHN",
+    "algorithm": "dijkstra",
+    "description": "Ruta óptima calculada con Dijkstra (rapidez) sin producto específico.",
+    "result_summary": "Ruta: PER → CHN | Tipo: aerea | Distancia: 17,000 km | Tiempo: 22 h | Costo: 1,500 USD",
+    "created_at": "2025-11-07T10:56:09.806072",
+    "hidden": false
+  },
+  {
+    "id": 18,
+    "user": "renzo21",
+    "title": "Ruta óptima Dijkstra PER → CHN",
+    "algorithm": "dijkstra",
+    "description": "Ruta óptima calculada con Dijkstra (economia) sin producto específico.",
+    "result_summary": "Ruta: PER → CHN | Tipo: aerea | Distancia: 17,000 km | Tiempo: 22 h | Costo: 1,500 USD",
+    "created_at": "2025-11-07T10:56:12.883780",
+    "hidden": false
+  },
+  {
+    "id": 19,
+    "user": "renzo21",
+    "title": "Ruta óptima Dijkstra PER → CHN",
+    "algorithm": "dijkstra",
+    "description": "Ruta óptima calculada con Dijkstra (economia) para el producto \"SOLAR_PANEL_STD\".",
+    "result_summary": "Ruta: PER → CHN | Tipo: aerea | Distancia: 17,000 km | Tiempo: 22 h | Costo: 1,500 USD",
+    "created_at": "2025-11-07T10:56:15.230558",
+    "hidden": false
+  },
+  {
+    "id": 20,
+    "user": "renzo21",
+    "title": "Ruta óptima Dijkstra PER → CHN",
+    "algorithm": "dijkstra",
+    "description": "Ruta óptima calculada con Dijkstra (rapidez) para el producto \"SOLAR_PANEL_STD\".",
+    "result_summary": "Ruta: PER → CHN | Tipo: aerea | Distancia: 17,000 km | Tiempo: 22 h | Costo: 1,500 USD",
+    "created_at": "2025-11-07T10:56:18.574247",
+    "hidden": false
+  },
+  {
+    "id": 21,
+    "user": "renzo21",
+    "title": "Ruta óptima Dijkstra PER → CHL",
+    "algorithm": "dijkstra",
+    "description": "Ruta óptima calculada con Dijkstra (rapidez) para el producto \"SOLAR_PANEL_STD\".",
+    "result_summary": "Ruta: PER → CHL | Tipo: aerea | Distancia: 17,000 km | Tiempo: 22 h | Costo: 1,500 USD",
+    "created_at": "2025-11-07T10:56:21.994430",
+    "hidden": false
+  },
+  {
+    "id": 22,
+    "user": "renzo21",
+    "title": "Ruta óptima Dijkstra PER → CHL",
+    "algorithm": "dijkstra",
+    "description": "Ruta óptima calculada con Dijkstra (economia) para el producto \"SOLAR_PANEL_STD\".",
+    "result_summary": "Ruta: PER → CHL | Tipo: aerea | Distancia: 17,000 km | Tiempo: 22 h | Costo: 1,500 USD",
+    "created_at": "2025-11-07T10:56:25.451909",
+    "hidden": false
+  },
+  {
+    "id": 23,
+    "user": "renzo21",
+    "title": "Ruta óptima Dijkstra PER → USA",
+    "algorithm": "dijkstra",
+    "description": "Ruta óptima calculada con Dijkstra (economia) para el producto \"SOLAR_PANEL_STD\".",
+    "result_summary": "Ruta: PER → USA | Tipo: aerea | Distancia: 17,000 km | Tiempo: 22 h | Costo: 1,500 USD",
+    "created_at": "2025-11-07T10:56:28.993824",
+    "hidden": false
+  },
+  {
+    "id": 24,
+    "user": "renzo21",
+    "title": "Ruta óptima Dijkstra PER → USA",
+    "algorithm": "dijkstra",
+    "description": "Ruta óptima calculada con Dijkstra (economia) para el producto \"LITHIUM_BATTERY_5KWH\".",
+    "result_summary": "Ruta: PER → USA | Tipo: aerea | Distancia: 17,000 km | Tiempo: 22 h | Costo: 1,500 USD",
+    "created_at": "2025-11-07T10:56:32.182924",
+    "hidden": false
+  },
+  {
+    "id": 25,
+    "user": "renzo21",
+    "title": "Ruta óptima Dijkstra PER → USA",
+    "algorithm": "dijkstra",
+    "description": "Ruta óptima calculada con Dijkstra (rapidez) para el producto \"LITHIUM_BATTERY_5KWH\".",
+    "result_summary": "Ruta: PER → USA | Tipo: aerea | Distancia: 17,000 km | Tiempo: 22 h | Costo: 1,500 USD",
+    "created_at": "2025-11-07T10:56:34.293040",
+    "hidden": false
+  }
+]

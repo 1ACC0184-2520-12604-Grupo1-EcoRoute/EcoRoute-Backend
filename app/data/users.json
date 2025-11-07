@@ -1,0 +1,11 @@
+{
+  "users": {
+    "renzo21": {
+      "id": 1,
+      "username": "renzo21",
+      "email": "renzo@gmail.com",
+      "hashed_password": "$pbkdf2-sha256$29000$FqJUqnUOgbC2tlYqxXhvbQ$gihe0jyjDjlxKj/phw0NgITTGEvtfQqOpWKvz.VKm7Y"
+    }
+  },
+  "id_counter": 2
+}

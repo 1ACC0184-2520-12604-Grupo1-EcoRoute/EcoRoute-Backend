@@ -1,0 +1,90 @@
+{
+  "paises": [
+    { "id": "PER", "nombre": "Perú", "lat": -12.0464, "lon": -77.0428 },
+    { "id": "BRA", "nombre": "Brasil", "lat": -15.7939, "lon": -47.8828 },
+    { "id": "MEX", "nombre": "México", "lat": 19.4326, "lon": -99.1332 },
+    { "id": "USA", "nombre": "Estados Unidos", "lat": 38.9072, "lon": -77.0369 },
+    { "id": "ESP", "nombre": "España", "lat": 40.4168, "lon": -3.7038 },
+    { "id": "NLD", "nombre": "Países Bajos", "lat": 52.3676, "lon": 4.9041 },
+    { "id": "DEU", "nombre": "Alemania", "lat": 52.52, "lon": 13.405 },
+    { "id": "ZAF", "nombre": "Sudáfrica", "lat": -26.2041, "lon": 28.0473 },
+    { "id": "ARE", "nombre": "Emiratos Árabes Unidos", "lat": 25.2048, "lon": 55.2708 },
+    { "id": "IND", "nombre": "India", "lat": 28.6139, "lon": 77.209 },
+    { "id": "SGP", "nombre": "Singapur", "lat": 1.3521, "lon": 103.8198 },
+    { "id": "CHN", "nombre": "China", "lat": 39.9042, "lon": 116.4074 },
+    { "id": "JPN", "nombre": "Japón", "lat": 35.6762, "lon": 139.6503 },
+    { "id": "AUS", "nombre": "Australia", "lat": -33.8688, "lon": 151.2093 },
+    { "id": "CHL", "nombre": "Chile", "lat": -33.4489, "lon": -70.6693 }
+  ],
+  "productos": [
+    {
+      "id": "SOLAR_PANEL_STD",
+      "nombre": "Panel solar 450W",
+      "categoria": "energia_solar",
+      "peso_kg": 25,
+      "volumen_m3": 0.12,
+      "precio_unitario_usd": 150,
+      "tipo_transporte_permitido": ["aerea", "maritima", "terrestre", "mixta"]
+    },
+    {
+      "id": "INVERTER_5KW",
+      "nombre": "Inversor 5kW",
+      "categoria": "energia_solar",
+      "peso_kg": 18,
+      "volumen_m3": 0.06,
+      "precio_unitario_usd": 500,
+      "tipo_transporte_permitido": ["aerea", "maritima", "terrestre", "mixta"]
+    },
+    {
+      "id": "LITHIUM_BATTERY_5KWH",
+      "nombre": "Batería de litio 5kWh",
+      "categoria": "almacenamiento_energia",
+      "peso_kg": 45,
+      "volumen_m3": 0.11,
+      "precio_unitario_usd": 900,
+      "tipo_transporte_permitido": ["maritima", "terrestre", "mixta"]
+    },
+    {
+      "id": "COPPER_CATHODE",
+      "nombre": "Cátodos de cobre",
+      "categoria": "minerales",
+      "peso_kg": 1000,
+      "volumen_m3": 1.2,
+      "precio_unitario_usd": 8000,
+      "tipo_transporte_permitido": ["maritima", "terrestre", "mixta"]
+    },
+    {
+      "id": "TEXTIL_PREMIUM",
+      "nombre": "Textil premium",
+      "categoria": "textil",
+      "peso_kg": 5,
+      "volumen_m3": 0.04,
+      "precio_unitario_usd": 200,
+      "tipo_transporte_permitido": ["aerea", "maritima", "terrestre", "mixta"]
+    }
+  ],
+  "rutas": [
+    { "origen": "PER", "destino": "CHL", "tipo": "terrestre", "distancia_km": 2500, "tiempo_horas": 40, "costo_base_usd_ton": 250 },
+    { "origen": "CHL", "destino": "ESP", "tipo": "maritima", "distancia_km": 9600, "tiempo_horas": 260, "costo_base_usd_ton": 180 },
+    { "origen": "PER", "destino": "USA", "tipo": "aerea", "distancia_km": 6100, "tiempo_horas": 8.5, "costo_base_usd_ton": 1200 },
+    { "origen": "PER", "destino": "MEX", "tipo": "aerea", "distancia_km": 4200, "tiempo_horas": 6.5, "costo_base_usd_ton": 900 },
+    { "origen": "MEX", "destino": "USA", "tipo": "terrestre", "distancia_km": 1500, "tiempo_horas": 24, "costo_base_usd_ton": 150 },
+    { "origen": "USA", "destino": "ESP", "tipo": "aerea", "distancia_km": 5760, "tiempo_horas": 8, "costo_base_usd_ton": 1300 },
+    { "origen": "ESP", "destino": "NLD", "tipo": "terrestre", "distancia_km": 1800, "tiempo_horas": 20, "costo_base_usd_ton": 110 },
+    { "origen": "NLD", "destino": "DEU", "tipo": "terrestre", "distancia_km": 300, "tiempo_horas": 5, "costo_base_usd_ton": 60 },
+    { "origen": "ESP", "destino": "ARE", "tipo": "aerea", "distancia_km": 5650, "tiempo_horas": 8, "costo_base_usd_ton": 1250 },
+    { "origen": "ARE", "destino": "IND", "tipo": "aerea", "distancia_km": 2200, "tiempo_horas": 4, "costo_base_usd_ton": 700 },
+    { "origen": "IND", "destino": "SGP", "tipo": "maritima", "distancia_km": 3600, "tiempo_horas": 96, "costo_base_usd_ton": 160 },
+    { "origen": "SGP", "destino": "CHN", "tipo": "maritima", "distancia_km": 3800, "tiempo_horas": 96, "costo_base_usd_ton": 170 },
+    { "origen": "PER", "destino": "CHN", "tipo": "aerea", "distancia_km": 17000, "tiempo_horas": 22, "costo_base_usd_ton": 3000 },
+    { "origen": "PER", "destino": "ARE", "tipo": "maritima", "distancia_km": 16500, "tiempo_horas": 360, "costo_base_usd_ton": 210 },
+    { "origen": "ARE", "destino": "CHN", "tipo": "maritima", "distancia_km": 6300, "tiempo_horas": 150, "costo_base_usd_ton": 190 },
+    { "origen": "ZAF", "destino": "ARE", "tipo": "maritima", "distancia_km": 6400, "tiempo_horas": 160, "costo_base_usd_ton": 175 },
+    { "origen": "ZAF", "destino": "ESP", "tipo": "maritima", "distancia_km": 7700, "tiempo_horas": 180, "costo_base_usd_ton": 190 },
+    { "origen": "BRA", "destino": "ZAF", "tipo": "maritima", "distancia_km": 6800, "tiempo_horas": 170, "costo_base_usd_ton": 185 },
+    { "origen": "PER", "destino": "BRA", "tipo": "terrestre", "distancia_km": 3000, "tiempo_horas": 48, "costo_base_usd_ton": 260 },
+    { "origen": "USA", "destino": "CHN", "tipo": "aerea", "distancia_km": 11100, "tiempo_horas": 13.5, "costo_base_usd_ton": 2800 },
+    { "origen": "USA", "destino": "CHN", "tipo": "maritima", "distancia_km": 11200, "tiempo_horas": 260, "costo_base_usd_ton": 200 },
+    { "origen": "ESP", "destino": "CHN", "tipo": "aerea", "distancia_km": 9500, "tiempo_horas": 11, "costo_base_usd_ton": 2600 }
+  ]
+}
