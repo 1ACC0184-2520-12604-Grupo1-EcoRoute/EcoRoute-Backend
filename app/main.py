@@ -21,6 +21,7 @@ app.add_middleware(
 
 # CORS (incluye 5173 y 5174)
 origins = [
+    "https://ecoroute-frontend.web.app",
     "http://localhost:5173",
     "http://127.0.0.1:5173",
     "http://localhost:5174",
