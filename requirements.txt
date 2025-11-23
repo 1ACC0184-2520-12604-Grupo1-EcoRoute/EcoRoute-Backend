@@ -6,3 +6,4 @@ python-dotenv
 pydantic
 openpyxl
 itsdangerous
+authlib
