@@ -1,0 +1,1 @@
+from app.models.analisis_resultados import AnalisisResultado

@@ -1,0 +1,23 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment
+.venv/
+env/
+
+# Environment variables
+.env
+
+# Certificates
+*.pem
+*.key
+
+# OS / Editor
+.vscode/
+.DS_Store
+
+# Misc
+*.sqlite3
+*.xls*
+*.xlsx
