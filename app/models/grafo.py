@@ -16,34 +16,42 @@ class GrafoRutas:
         self.nodos = {}
         self.adyacencia = {}
         self.productos = {}
-
     # 1. Cargar países
-        paises = db.execute(select(PaisModel)).scalars().all()
-        for p in paises:
-            self.nodos[p.id] = Nodo(
+    paises = db.execute(select(PaisModel)).scalars().all()
+    for p in paises:
+        self.nodos[p.id] = Nodo(
             id=p.id,
             nombre=p.nombre,
             lat=p.lat,
             lon=p.lon
         )
-        self.adyacencia[p.id] = []
+        self.adyacencia[p.id] = []   # <-- ESTO DEBE IR DENTRO DEL FOR
 
-        # 2. Cargar rutas
-        rutas = db.execute(select(RutaModel)).scalars().all()
-        for r in rutas:
-            ruta = Ruta(
-                origen=r.origen_id,
-                destino=r.destino_id,
-                tipo=r.tipo,
-                distancia_km=r.distancia_km,
-                tiempo_horas=r.tiempo_horas,
-                costo_base_usd_ton=r.costo_base_usd_ton,
+    # 2. Cargar rutas
+    rutas = db.execute(select(RutaModel)).scalars().all()
+    for r in rutas:
+
+        # si aparece un país en rutas que no está en paises
+        if r.origen_id not in self.nodos:
+            self.nodos[r.origen_id] = Nodo(r.origen_id, r.origen_id, 0, 0)
+            self.adyacencia[r.origen_id] = []
+
+        if r.destino_id not in self.nodos:
+            self.nodos[r.destino_id] = Nodo(r.destino_id, r.destino_id, 0, 0)
+            self.adyacencia[r.destino_id] = []
+
+        ruta = Ruta(
+            origen=r.origen_id,
+            destino=r.destino_id,
+            tipo=r.tipo,
+            distancia_km=r.distancia_km,
+            tiempo_horas=r.tiempo_horas,
+            costo_base_usd_ton=r.costo_base_usd_ton,
         )
-        self.adyacencia[r.origen_id].append(ruta)
 
-    
-    
-    
+        self.adyacencia[r.origen_id].append(ruta)
+ 
+
     
     def __init__(self):
         self.nodos: Dict[str, Nodo] = {}
