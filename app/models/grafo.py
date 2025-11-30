@@ -17,19 +17,19 @@ class GrafoRutas:
         self.adyacencia = {}
         self.productos = {}
 
-        # 1. Cargar países
-        paises = (await db.execute(select(PaisModel))).scalars().all()
+    # 1. Cargar países
+        paises = db.execute(select(PaisModel)).scalars().all()
         for p in paises:
             self.nodos[p.id] = Nodo(
-                id=p.id,
-                nombre=p.nombre,
-                lat=p.lat,
-                lon=p.lon
-            )
-            self.adyacencia[p.id] = []
+            id=p.id,
+            nombre=p.nombre,
+            lat=p.lat,
+            lon=p.lon
+        )
+        self.adyacencia[p.id] = []
 
         # 2. Cargar rutas
-        rutas = (await db.execute(select(RutaModel))).scalars().all()
+        rutas = db.execute(select(RutaModel)).scalars().all()
         for r in rutas:
             ruta = Ruta(
                 origen=r.origen_id,
@@ -38,8 +38,9 @@ class GrafoRutas:
                 distancia_km=r.distancia_km,
                 tiempo_horas=r.tiempo_horas,
                 costo_base_usd_ton=r.costo_base_usd_ton,
-            )
-            self.adyacencia[r.origen_id].append(ruta)
+        )
+        self.adyacencia[r.origen_id].append(ruta)
+
     
     
     
