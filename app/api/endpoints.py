@@ -32,7 +32,7 @@ async def ruta_optima(req: RutaRequest, db: Session = Depends(get_db)):
         raise HTTPException(status_code=400, detail="Origen y destino no pueden ser iguales.")
 
     grafo = GrafoRutas()
-    await grafo.cargar_desde_bd(db)   # ← AHORA CARGA TODO DE AIVEN
+    grafo.cargar_desde_bd(db)   # ← AHORA CARGA TODO DE AIVEN
 
     service = RutasService(grafo)
 

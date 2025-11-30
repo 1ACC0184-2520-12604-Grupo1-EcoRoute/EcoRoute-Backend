@@ -12,7 +12,7 @@ from app.models.pais_model import PaisModel
 
 class GrafoRutas:
     
-    async def cargar_desde_bd(self, db):
+    def cargar_desde_bd(self, db):
         self.nodos = {}
         self.adyacencia = {}
         self.productos = {}
