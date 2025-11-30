@@ -6,6 +6,8 @@ from .ruta import Ruta
 from .producto import Producto
 from sqlalchemy import select
 from app.models.ruta_model import RutaModel
+from app.models.pais_model import PaisModel
+
 
 
 class GrafoRutas:
