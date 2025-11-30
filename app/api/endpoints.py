@@ -1,8 +1,11 @@
+from app.database import get_db
 from app.models.grafo import GrafoRutas
 from app.services.rutas_service import RutasService
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Depends
 from pydantic import BaseModel
 from typing import List, Optional
+from sqlalchemy.orm import Session
+
 
 router = APIRouter(tags=["Rutas"])
 
