@@ -10,16 +10,23 @@ def dijkstra(
     destino: str,
     weight_func: Callable[[Ruta], float],
 ) -> Optional[Tuple[List[Ruta], float]]:
+
     dist: Dict[str, float] = {n: float("inf") for n in grafo.obtener_nodos()}
     previo: Dict[str, Tuple[str, Ruta]] = {}
+    visitado: Dict[str, bool] = {n: False for n in grafo.obtener_nodos()}
 
     dist[origen] = 0.0
     pq: List[Tuple[float, str]] = [(0.0, origen)]
 
     while pq:
         dist_actual, nodo_actual = heapq.heappop(pq)
-        if dist_actual > dist[nodo_actual]:
+
+        # Si ya fue visitado, saltar
+        if visitado[nodo_actual]:
             continue
+
+        visitado[nodo_actual] = True
+
         if nodo_actual == destino:
             break
 
@@ -27,7 +34,9 @@ def dijkstra(
             w = weight_func(ruta)
             if w == float("inf"):
                 continue
+
             nuevo = dist_actual + w
+
             if nuevo < dist[ruta.destino]:
                 dist[ruta.destino] = nuevo
                 previo[ruta.destino] = (nodo_actual, ruta)
@@ -36,9 +45,13 @@ def dijkstra(
     if dist[destino] == float("inf"):
         return None
 
+    # Reconstrucción del camino
     rutas_resultado: List[Ruta] = []
     actual = destino
+
     while actual != origen:
+        if actual not in previo:
+            return None  # no hay conexión real
         anterior, ruta_usada = previo[actual]
         rutas_resultado.append(ruta_usada)
         actual = anterior
