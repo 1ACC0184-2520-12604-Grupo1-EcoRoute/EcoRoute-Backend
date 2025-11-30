@@ -89,10 +89,10 @@ class RutasService:
         elif algoritmo == "floyd-warshall":
             cache_key = (criterio_norm, producto_id or "no_product")
             if cache_key not in self._fw_cache:
-                dist, next_hop = floyd_warshall(self.grafo, weight_func)
-                self._fw_cache[cache_key] = (dist, next_hop)
-            _, next_hop = self._fw_cache[cache_key]
-            rutas = reconstruir_ruta_floyd(origen, destino, self.grafo, next_hop, weight_func)
+             dist, next_hop, edge_used = floyd_warshall(self.grafo, weight_func)
+             self._fw_cache[cache_key] = (dist, next_hop, edge_used)
+             _, next_hop, edge_used = self._fw_cache[cache_key]
+             rutas = reconstruir_ruta_floyd(origen, destino, self.grafo, next_hop, edge_used, weight_func)
             if rutas is None:
                 raise RutaNoEncontrada("No existe una ruta disponible para los parámetros seleccionados.")
         else:
