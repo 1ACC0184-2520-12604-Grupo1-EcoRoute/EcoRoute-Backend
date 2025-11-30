@@ -4,9 +4,44 @@ from typing import Dict, List
 from .nodo import Nodo
 from .ruta import Ruta
 from .producto import Producto
+from sqlalchemy import select
+from app.models.ruta_model import RutaModel
 
 
 class GrafoRutas:
+    
+    async def cargar_desde_bd(self, db):
+        self.nodos = {}
+        self.adyacencia = {}
+        self.productos = {}
+
+        # 1. Cargar países
+        paises = (await db.execute(select(PaisModel))).scalars().all()
+        for p in paises:
+            self.nodos[p.id] = Nodo(
+                id=p.id,
+                nombre=p.nombre,
+                lat=p.lat,
+                lon=p.lon
+            )
+            self.adyacencia[p.id] = []
+
+        # 2. Cargar rutas
+        rutas = (await db.execute(select(RutaModel))).scalars().all()
+        for r in rutas:
+            ruta = Ruta(
+                origen=r.origen_id,
+                destino=r.destino_id,
+                tipo=r.tipo,
+                distancia_km=r.distancia_km,
+                tiempo_horas=r.tiempo_horas,
+                costo_base_usd_ton=r.costo_base_usd_ton,
+            )
+            self.adyacencia[r.origen_id].append(ruta)
+    
+    
+    
+    
     def __init__(self):
         self.nodos: Dict[str, Nodo] = {}
         self.adyacencia: Dict[str, List[Ruta]] = {}

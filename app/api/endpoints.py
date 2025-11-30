@@ -1,3 +1,5 @@
+from app.models.grafo import GrafoRutas
+from app.services.rutas_service import RutasService
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from typing import List, Optional
@@ -22,27 +24,22 @@ class RutaResponse(BaseModel):
 
 
 @router.post("/ruta-optima", response_model=RutaResponse)
-def ruta_optima(req: RutaRequest):
+async def ruta_optima(req: RutaRequest, db: Session = Depends(get_db)):
     if req.origen == req.destino:
         raise HTTPException(status_code=400, detail="Origen y destino no pueden ser iguales.")
 
-    # Demo
-    return RutaResponse(
-        ruta=[req.origen, req.destino],
-        tipo_ruta="aerea",
-        distancia_total=17000,
-        tiempo_total=22,
-        costo_total=1500,
+    grafo = GrafoRutas()
+    await grafo.cargar_desde_bd(db)   # ← AHORA CARGA TODO DE AIVEN
+
+    service = RutasService(grafo)
+
+    resultado = service.calcular_ruta_optima(
+        algoritmo=req.algoritmo,
+        criterio=req.criterio,
+        origen=req.origen,
+        destino=req.destino,
+        producto_id=req.producto_id
     )
-@router.get("/api/nodes")
-def get_nodes():
-    return {
-        "nodes": ["PER", "CHL", "BRA", "USA", "CHN"],
-        "geo": {
-            "PER": [-12.0464, -77.0428],
-            "CHL": [-33.4489, -70.6693],
-            "BRA": [-15.7801, -47.9292],
-            "USA": [37.0902, -95.7129],
-            "CHN": [35.8617, 104.1954],
-        },
-    }
+
+    return resultado
+
