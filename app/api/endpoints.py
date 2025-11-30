@@ -1,5 +1,6 @@
 from app.database import get_db
 from app.models.grafo import GrafoRutas
+from app.models.pais_model import PaisModel
 from app.services.rutas_service import RutasService
 from fastapi import APIRouter, HTTPException, Depends
 from pydantic import BaseModel
@@ -46,3 +47,12 @@ async def ruta_optima(req: RutaRequest, db: Session = Depends(get_db)):
 
     return resultado
 
+
+@router.get("/api/nodes")
+def get_nodes(db: Session = Depends(get_db)):
+    paises = db.query(PaisModel).all()
+
+    nodes = [p.id for p in paises]
+    geo = {p.id: [p.lat, p.lon] for p in paises}
+
+    return {"nodes": nodes, "geo": geo}
