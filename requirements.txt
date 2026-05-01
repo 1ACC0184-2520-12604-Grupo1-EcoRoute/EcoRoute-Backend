@@ -1,7 +1,13 @@
 fastapi
-uvicorn
+uvicorn[standard]
 sqlalchemy
-passlib[bcrypt]
+pymysql
+python-dotenv
+pydantic
+openpyxl
+itsdangerous
+authlib
+httpx
+email-validator
 python-jose[cryptography]
-networkx
-pandas
+passlib[bcrypt]
